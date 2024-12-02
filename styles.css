@@ -10,8 +10,7 @@
     padding: 0;
 }
 
-h1 {
-    font-size: 40px;
+.centered-text {
     font-weight: bold;
     color: black;
     margin-top: 40px;
