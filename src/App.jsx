@@ -3,7 +3,7 @@ import AnimatedSection from "./components/AnimatedSection";
 import "./App.css";
 
 function Title() {
-  return <h1>hello, and welcome to my portfolio :)</h1>;
+  return <h1>hello, and welcome to my portfolio 😳</h1>;
 }
 
 function Projects() {
@@ -13,7 +13,13 @@ function Projects() {
 export default function App() {
   return (
     <>
-      <AnimatedSection style={{ justifyItems: "start", alignItems: "start", marginLeft: "10vh" }}>
+      <AnimatedSection
+        style={{
+          //justifyItems: "start",
+          //alignItems: "start",
+          //marginLeft: "10vh",
+        }}
+      >
         <Title />
       </AnimatedSection>
     </>
