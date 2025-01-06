@@ -39,7 +39,7 @@ function Spotlight({ children }) {
         transform: "translateX(-50%)",
         top: "5vh",
         width: "60%",
-        height: "8%",
+        height: "6%",
 
         borderRadius: "24px",
         border: "2px solid rgb(40, 40, 40)",
@@ -67,6 +67,7 @@ export default function App() {
             fontFamily: "sans-serif",
             fontWeight: "bold",
             marginLeft: "20px",
+            alignSelf: "center",
             color: "rgb(150, 150, 150)",
             gridColumn: "1",
           }}
