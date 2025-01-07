@@ -1,4 +1,5 @@
 import "./App.css";
+
 import { IoMdMail } from "react-icons/io";
 import {
   FaGithub,
@@ -6,12 +7,6 @@ import {
   FaGraduationCap,
   FaRegFilePdf,
 } from "react-icons/fa";
-
-const iconStyle = {
-  fontSize: "1.3rem",
-  margin: "auto",
-  color: "rgb(150, 150, 150)",
-};
 
 function FadeInSection({ children, className, ...props }) {
   return (
@@ -72,13 +67,13 @@ function Spotlight({ children }) {
 export default function App() {
   return (
     <>
-      <Spotlight>
+      <Spotlight className="spotlight">
         <p
           style={{
             fontSize: "0.8rem",
             fontFamily: "sans-serif",
             fontWeight: "bold",
-            marginLeft: "2%", //20px
+            marginLeft: "2%",
             alignSelf: "center",
             color: "rgb(150, 150, 150)",
           }}
@@ -86,23 +81,26 @@ export default function App() {
           ASAAD AHMED
         </p>
         <div
+          id="header-spotlight-icons"
           style={{
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
             gap: "8px", //8px, 12%
-            //gridColumn: "2",
             alignSelf: "center",
             marginLeft: "auto",
             marginRight: "2%", // 20px
             overflow: "hidden",
           }}
         >
-          <FaGithub style={iconStyle}></FaGithub>
-          <FaLinkedinIn style={iconStyle}></FaLinkedinIn>
-          <FaGraduationCap style={iconStyle}></FaGraduationCap>
-          <FaRegFilePdf style={iconStyle}></FaRegFilePdf>
-          <IoMdMail style={iconStyle}></IoMdMail>
+          <FaGithub className="icon" id="github-icon"></FaGithub>
+          <FaLinkedinIn className="icon" id="linkedin-icon"></FaLinkedinIn>
+          <FaGraduationCap
+            className="icon"
+            id="education-icon"
+          ></FaGraduationCap>
+          <FaRegFilePdf className="icon" id="resume-icon"></FaRegFilePdf>
+          <IoMdMail className="icon" id="mail-icon"></IoMdMail>
         </div>
       </Spotlight>
       <FadeInSection

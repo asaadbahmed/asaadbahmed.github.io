@@ -1,0 +1,26 @@
+section {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.spotlight #header-spotlight-icons #github-icon:hover {
+  color: aqua;
+  transition: color 0.5s;
+}
+
+.icon {
+  pointer-events: auto;
+  font-size: 1.3rem;
+  margin: auto;
+  color: rgb(150, 150, 150);
+}
+
+/*
+.spotlight #header-spotlight-icons .icon {
+  font-size: 1.3rem !important;
+  margin: auto !important;
+  color: rgb(150, 150, 150) !important;
+}
+*/
