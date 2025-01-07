@@ -51,17 +51,26 @@ function Spotlight({ children }) {
         borderRadius: "24px",
         border: "2px solid rgb(40, 40, 40)",
         backgroundColor: "#121212",
-        boxShadow: "0 0 10px 2px rgba(40, 40, 40, 1)",
+        boxShadow: "0 0 10px 2px rgba(40, 40, 40, 0.6)",
 
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
+
+        zIndex: "2", // IMPORTANT: might remove this later & make it more translucent, but then icon hover functionality doesn't work
+        pointerEvents: "auto",
       }}
     >
       {children}
     </div>
   );
+}
+
+function UnderConstruction() {
+  <h1 style={{ fontSize: "2.5rem" }}>
+    <>in dev 🛠️</>
+  </h1>;
 }
 
 export default function App() {
@@ -112,10 +121,6 @@ export default function App() {
       >
         <Heading />
       </FadeInSection>
-
-      <section></section>
-      <section></section>
-      <section></section>
     </>
   );
 }
