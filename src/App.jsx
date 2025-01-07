@@ -1,4 +1,5 @@
 import "./App.css";
+import Resume from "./assets/Asaad_Ahmed_Resume_1-7-25.pdf";
 import { IoMdMail } from "react-icons/io";
 import {
   FaGithub,
@@ -72,6 +73,16 @@ function Spotlight({ children }) {
 }
 
 export default function App() {
+  const githubOnClick = () => window.open("https://github.com/asaadbahmed");
+  const linkedinOnClick = () =>
+    window.open("https://www.linkedin.com/in/asaadbinahmed/");
+  const educationOnClick = () =>
+    window.open(
+      "https://www.torontomu.ca/programs/undergraduate/computer-engineering/"
+    );
+  const resumeOnClick = () => window.open(Resume);
+  const mailOnClick = () => window.open("mailto:asaadbinahmed@gmail.com");
+
   return (
     <>
       <Spotlight className="spotlight">
@@ -100,14 +111,31 @@ export default function App() {
             overflow: "hidden",
           }}
         >
-          <FaGithub className="icon" id="github-icon"></FaGithub>
-          <FaLinkedinIn className="icon" id="linkedin-icon"></FaLinkedinIn>
+          <FaGithub
+            className="icon"
+            id="github-icon"
+            onClick={githubOnClick}
+          ></FaGithub>
+          <FaLinkedinIn
+            className="icon"
+            id="linkedin-icon"
+            onClick={linkedinOnClick}
+          ></FaLinkedinIn>
           <FaGraduationCap
             className="icon"
             id="education-icon"
+            onClick={educationOnClick}
           ></FaGraduationCap>
-          <FaRegFilePdf className="icon" id="resume-icon"></FaRegFilePdf>
-          <IoMdMail className="icon" id="mail-icon"></IoMdMail>
+          <FaRegFilePdf
+            className="icon"
+            id="resume-icon"
+            onClick={resumeOnClick}
+          ></FaRegFilePdf>
+          <IoMdMail
+            className="icon"
+            id="mail-icon"
+            onClick={mailOnClick}
+          ></IoMdMail>
         </div>
       </Spotlight>
       <FadeInSection
