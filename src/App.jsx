@@ -1,5 +1,4 @@
 import "./App.css";
-
 import { IoMdMail } from "react-icons/io";
 import {
   FaGithub,
@@ -30,10 +29,15 @@ function Heading() {
   );
   */
   return (
-    <h1 style={{ fontSize: "2.5rem" }}>
-      hello, i'm Asaad ⚡<br></br>a computer engineer 💻<br></br>@TMU (formerly
-      Ryerson) 🎓
-    </h1>
+    <>
+      <h1 style={{ fontSize: "2.5rem" }}>
+        hello, i'm Asaad ⚡<br></br>a computer engineer 💻<br></br>@TMU
+        (formerly Ryerson) 🎓
+        <span style={{ display: "block", fontSize: "1.5rem" }}>
+          website is currently in development, stay tuned 🛠️
+        </span>
+      </h1>
+    </>
   );
 }
 
@@ -65,12 +69,6 @@ function Spotlight({ children }) {
       {children}
     </div>
   );
-}
-
-function UnderConstruction() {
-  <h1 style={{ fontSize: "2.5rem" }}>
-    <>in dev 🛠️</>
-  </h1>;
 }
 
 export default function App() {
