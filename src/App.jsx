@@ -1,4 +1,3 @@
-//import { useState } from "react";
 import "./App.css";
 import { IoMdMail } from "react-icons/io";
 import {
@@ -18,7 +17,7 @@ const iconStyle = {
 function AnimatedSection({ children, className, ...props }) {
   return (
     <section
-      className={`animate__animated animate__bounceInLeft ${className}`}
+      className={`animate__animated animate__fadeIn ${className}`}
       {...(props || {})}
     >
       {children}
@@ -27,7 +26,12 @@ function AnimatedSection({ children, className, ...props }) {
 }
 
 function Heading() {
-  return <h1>hello, and welcome to my portfolio 😎</h1>;
+  return (
+    <h1 style={{ fontSize: "2.5rem" }}>
+      hello, i'm Asaad<br></br>a computer engineer<br></br>@TMU (formerly
+      Ryerson)
+    </h1>
+  );
 }
 
 function Spotlight({ children }) {
@@ -44,7 +48,7 @@ function Spotlight({ children }) {
         borderRadius: "24px",
         border: "2px solid rgb(40, 40, 40)",
         backgroundColor: "#121212",
-        boxShadow: "0 0 10px 2px rgba(30, 30, 30, 0.5)",
+        boxShadow: "0 0 10px 2px rgba(40, 40, 40, 1)",
 
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
@@ -79,7 +83,7 @@ export default function App() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
-            gap: "8px",
+            gap: "5%", //8px
             gridColumn: "2",
             alignSelf: "center",
             marginLeft: "auto",
@@ -95,15 +99,11 @@ export default function App() {
         </div>
       </Spotlight>
       <AnimatedSection
-        style={
-          {
-            /*
-            justifyItems: "start",
-            alignItems: "start",
-            marginLeft: "10vh",
-            */
-          }
-        }
+        style={{
+          justifyItems: "start",
+          alignItems: "start",
+          marginLeft: "15%",
+        }}
       >
         <Heading />
       </AnimatedSection>
