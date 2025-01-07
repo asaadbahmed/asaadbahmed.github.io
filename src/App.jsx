@@ -50,8 +50,6 @@ function Spotlight({ children }) {
         left: "50%",
         transform: "translateX(-50%)",
         top: "5vh",
-        //width: "60%",
-        //height: "auto",
         minWidth: "70%",
         minHeight: "6%",
 
@@ -64,8 +62,6 @@ function Spotlight({ children }) {
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "center",
-        //display: "grid",
-        //gridTemplateColumns: "1fr 1fr",
       }}
     >
       {children}
@@ -85,7 +81,6 @@ export default function App() {
             marginLeft: "2%", //20px
             alignSelf: "center",
             color: "rgb(150, 150, 150)",
-            //gridColumn: "1",
           }}
         >
           ASAAD AHMED
