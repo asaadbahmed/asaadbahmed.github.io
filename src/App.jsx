@@ -81,18 +81,6 @@ export default function App() {
   const [spotlightOpacity, setOpacity] = useState(100);
   const [theme, setTheme] = useState("dark");
 
-  useEffect(() => {
-    let timeout = null;
-    const handleScroll = () => {
-      if (timeout) clearTimeout(timeout);
-      setOpacity(50);
-      timeout = setTimeout(() => setOpacity(100), 100);
-    };
-
-    document.addEventListener("scroll", handleScroll);
-    return () => document.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const githubOnClick = () => window.open("https://github.com/asaadbahmed");
   const linkedinOnClick = () =>
     window.open("https://www.linkedin.com/in/asaadbinahmed/");
