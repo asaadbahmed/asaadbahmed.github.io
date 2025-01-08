@@ -1,6 +1,4 @@
-import "./App.css";
 import Resume from "./assets/Asaad_Ahmed_Resume_1-7-25.pdf";
-import Switch from "react-ios-switch";
 import { IoMdMail } from "react-icons/io";
 import {
   FaGithub,
@@ -8,7 +6,9 @@ import {
   FaGraduationCap,
   FaRegFilePdf,
 } from "react-icons/fa";
+
 import { useEffect, useState } from "react";
+import "./App.css";
 
 function FadeInSection({ children, className, ...props }) {
   return (
@@ -102,8 +102,7 @@ export default function App() {
     );
   const resumeOnClick = () => window.open(Resume);
   const mailOnClick = () => window.open("mailto:asaadbinahmed@gmail.com");
-  const themeSwitchEvent = checked => checked ? setTheme("dark") : setTheme("light");
-
+  
   return (
     <div
       style={{ maxHeight: "100vh", display: "flex", flexDirection: "column" }}
@@ -171,20 +170,6 @@ export default function App() {
       >
         <Heading />
       </FadeInSection>
-      <Switch
-        checked={theme == "dark" ? true : false}
-        className={undefined}
-        disabled={undefined}
-        handleColor="white"
-        name={"themeSwitch"}
-        offColor="white"
-        onChange={themeSwitchEvent}
-        onColor="rgb(76, 217, 100)"
-        pendingOffColor={"white"}
-        pendingOnColor={"rgb(40, 40, 40)"}
-        readOnly={undefined}
-        style={{ position: "fixed", bottom: "5vh", right: "5%" }}
-      />
     </div>
   );
 }
