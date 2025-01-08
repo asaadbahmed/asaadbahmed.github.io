@@ -1,5 +1,6 @@
 import "./App.css";
 import Resume from "./assets/Asaad_Ahmed_Resume_1-7-25.pdf";
+import Switch from "react-ios-switch";
 import { IoMdMail } from "react-icons/io";
 import {
   FaGithub,
@@ -82,7 +83,7 @@ when you stop scrolling make it 100% provided its not overlapping another elemen
 */
 export default function App() {
   const [spotlightOpacity, setOpacity] = useState(100);
-  //const [scrolling, setScrolling] = useState(false);
+  const [theme, setTheme] = useState("dark");
 
   useEffect(() => {
     let timeout = null;
@@ -96,7 +97,7 @@ export default function App() {
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // *** UseEffect here too ***
+  // TODO: *** UseEffect here too ***
   const githubOnClick = () => window.open("https://github.com/asaadbahmed");
   const linkedinOnClick = () =>
     window.open("https://www.linkedin.com/in/asaadbinahmed/");
@@ -108,7 +109,9 @@ export default function App() {
   const mailOnClick = () => window.open("mailto:asaadbinahmed@gmail.com");
 
   return (
-    <>
+    <div
+      style={{ maxHeight: "100vh", display: "flex", flexDirection: "column" }}
+    >
       <Spotlight className="spotlight" opacity={spotlightOpacity}>
         <p
           style={{
@@ -164,14 +167,28 @@ export default function App() {
       </Spotlight>
       <FadeInSection
         style={{
-          justifyItems: "start",
-          alignItems: "start",
+          display: "flex",
+          justifyContent: "flex-start",
+          marginTop: "30vh",
           marginLeft: "15%",
         }}
       >
         <Heading />
       </FadeInSection>
-      
-    </>
+      <Switch
+        checked={true}
+        className={undefined}
+        disabled={undefined}
+        handleColor="white"
+        name={"themeSwitch"}
+        offColor="white"
+        onChange={() => {}}
+        onColor="rgb(76, 217, 100)"
+        pendingOffColor={undefined}
+        pendingOnColor={undefined}
+        readOnly={undefined}
+        style={{position: "fixed", bottom: "5vh", right: "5%"}}
+      />
+    </div>
   );
 }
