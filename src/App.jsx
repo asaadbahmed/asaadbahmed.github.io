@@ -7,6 +7,7 @@ import {
   FaGraduationCap,
   FaRegFilePdf,
 } from "react-icons/fa";
+import { useEffect, useState } from "react";
 
 function FadeInSection({ children, className, ...props }) {
   return (
@@ -30,22 +31,25 @@ function Heading() {
   );
   */
   return (
-    <>
+    <div>
       <h1 style={{ fontSize: "2.5rem" }}>
-        hello, i'm Asaad ⚡<br></br>a computer engineer 💻<br></br>@TMU
-        (formerly Ryerson) 🎓
+        i'm asaad ⚡<br></br>a computer engineer 💻<br></br>@tmu (formerly
+        ryerson) 🎓
         <span style={{ display: "block", fontSize: "1.5rem" }}>
           website is currently in development, stay tuned 🛠️
         </span>
       </h1>
-    </>
+    </div>
   );
 }
 
-function Spotlight({ children }) {
+function Spotlight({ children, opacity }) {
   return (
     <div
       style={{
+        opacity: opacity / 100,
+        transition: "opacity 0.3s ease-out",
+
         position: "fixed",
         left: "50%",
         transform: "translateX(-50%)",
@@ -55,7 +59,7 @@ function Spotlight({ children }) {
 
         borderRadius: "24px",
         border: "2px solid rgb(40, 40, 40)",
-        backgroundColor: "#121212",
+        backgroundColor: "rgb(20, 20, 20)", // IMPORTANT: rgb(40, 40, 40) looks nice too, get opinions
         boxShadow: "0 0 10px 2px rgba(40, 40, 40, 0.6)",
 
         display: "flex",
@@ -72,7 +76,27 @@ function Spotlight({ children }) {
   );
 }
 
+/*
+TODO: while scrolling, make the spotlights opacity 50%, 
+when you stop scrolling make it 100% provided its not overlapping another element in the DOM
+*/
 export default function App() {
+  const [spotlightOpacity, setOpacity] = useState(100);
+  //const [scrolling, setScrolling] = useState(false);
+
+  useEffect(() => {
+    let timeout = null;
+    const handleScroll = () => {
+      if (timeout) clearTimeout(timeout);
+      setOpacity(50);
+      timeout = setTimeout(() => setOpacity(100), 100);
+    };
+
+    document.addEventListener("scroll", handleScroll);
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // *** UseEffect here too ***
   const githubOnClick = () => window.open("https://github.com/asaadbahmed");
   const linkedinOnClick = () =>
     window.open("https://www.linkedin.com/in/asaadbinahmed/");
@@ -85,7 +109,7 @@ export default function App() {
 
   return (
     <>
-      <Spotlight className="spotlight">
+      <Spotlight className="spotlight" opacity={spotlightOpacity}>
         <p
           style={{
             fontSize: "0.8rem",
@@ -146,6 +170,21 @@ export default function App() {
         }}
       >
         <Heading />
+      </FadeInSection>
+      <FadeInSection>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            backgroundColor: "rgb(20, 20, 20)",
+            borderRadius: "24px",
+            border: "2px solid rgb(40, 40, 40)",
+            backgroundColor: "rgb(20, 20, 20)",
+            boxShadow: "0 0 10px 2px rgba(40, 40, 40, 0.6)",
+            minHeight: "90vh",
+            minWidth: "70vw",
+          }}
+        ></div>
       </FadeInSection>
     </>
   );
