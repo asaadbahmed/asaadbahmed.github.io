@@ -102,6 +102,7 @@ export default function App() {
     );
   const resumeOnClick = () => window.open(Resume);
   const mailOnClick = () => window.open("mailto:asaadbinahmed@gmail.com");
+  const themeSwitchEvent = checked => checked ? setTheme("dark") : setTheme("light");
 
   return (
     <div
@@ -171,18 +172,18 @@ export default function App() {
         <Heading />
       </FadeInSection>
       <Switch
-        checked={true}
+        checked={theme == "dark" ? true : false}
         className={undefined}
         disabled={undefined}
         handleColor="white"
         name={"themeSwitch"}
         offColor="white"
-        onChange={() => {}}
+        onChange={themeSwitchEvent}
         onColor="rgb(76, 217, 100)"
-        pendingOffColor={undefined}
-        pendingOnColor={undefined}
+        pendingOffColor={"white"}
+        pendingOnColor={"rgb(40, 40, 40)"}
         readOnly={undefined}
-        style={{position: "fixed", bottom: "5vh", right: "5%"}}
+        style={{ position: "fixed", bottom: "5vh", right: "5%" }}
       />
     </div>
   );
