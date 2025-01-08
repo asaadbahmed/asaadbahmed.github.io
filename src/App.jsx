@@ -55,7 +55,7 @@ function Spotlight({ children, opacity }) {
         transform: "translateX(-50%)",
         top: "5vh",
         minWidth: "70%",
-        minHeight: "6%",
+        minHeight: "7%",
 
         borderRadius: "24px",
         border: "2px solid rgb(40, 40, 40)",
@@ -115,7 +115,7 @@ export default function App() {
             fontSize: "0.8rem",
             fontFamily: "sans-serif",
             fontWeight: "bold",
-            marginLeft: "2%",
+            marginLeft: "4%",
             alignSelf: "center",
             color: "rgb(150, 150, 150)",
           }}
@@ -128,10 +128,10 @@ export default function App() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "center",
-            gap: "8px", //8px, 12%
+            gap: "10px", //8px, 12%
             alignSelf: "center",
             marginLeft: "auto",
-            marginRight: "2%", // 20px
+            marginRight: "4%", // 20px
             overflow: "hidden",
           }}
         >
@@ -171,21 +171,7 @@ export default function App() {
       >
         <Heading />
       </FadeInSection>
-      <FadeInSection>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            backgroundColor: "rgb(20, 20, 20)",
-            borderRadius: "24px",
-            border: "2px solid rgb(40, 40, 40)",
-            backgroundColor: "rgb(20, 20, 20)",
-            boxShadow: "0 0 10px 2px rgba(40, 40, 40, 0.6)",
-            minHeight: "90vh",
-            minWidth: "70vw",
-          }}
-        ></div>
-      </FadeInSection>
+      
     </>
   );
 }
