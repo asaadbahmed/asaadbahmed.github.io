@@ -77,10 +77,6 @@ function Spotlight({ children, opacity }) {
   );
 }
 
-/*
-TODO: while scrolling, make the spotlights opacity 50%, 
-when you stop scrolling make it 100% provided its not overlapping another element in the DOM
-*/
 export default function App() {
   const [spotlightOpacity, setOpacity] = useState(100);
   const [theme, setTheme] = useState("dark");
@@ -97,7 +93,6 @@ export default function App() {
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // TODO: *** UseEffect here too ***
   const githubOnClick = () => window.open("https://github.com/asaadbahmed");
   const linkedinOnClick = () =>
     window.open("https://www.linkedin.com/in/asaadbinahmed/");
