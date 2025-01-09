@@ -1,4 +1,6 @@
 import Resume from "./assets/Asaad_Ahmed_Resume_1-7-25.pdf";
+import LightModeIcon from "@mui/icons-material/LightMode";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { IoMdMail } from "react-icons/io";
 import {
   FaGithub,
@@ -13,6 +15,7 @@ import Switch from "@mui/material/Switch";
 import { useEffect, useState } from "react";
 import themes from "./theme.js";
 import "./App.css";
+import { DarkMode } from "@mui/icons-material";
 
 function FadeInSection({ children, className, ...props }) {
   return (
@@ -57,7 +60,8 @@ function Spotlight({ children, opacity, theme }) {
       style={{
         opacity: opacity / 100,
         transition: "opacity 0.3s ease-out",
-        transition: "background-color 0.5s ease-out, border 0.5s ease-out, box-shadow 0.5s ease-out",
+        transition:
+          "background-color 0.5s ease-out, border 0.5s ease-out, box-shadow 0.5s ease-out",
 
         position: "fixed",
         left: "50%",
@@ -86,7 +90,13 @@ function Spotlight({ children, opacity, theme }) {
 }
 
 const IOSSwitch = styled((props) => (
-  <Switch focusVisibleClassName=".Mui-focusVisible" disableRipple {...props} />
+  <Switch
+    focusVisibleClassName=".Mui-focusVisible"
+    disableRipple
+    {...props}
+    icon={<LightModeIcon sx={{ color: "orange" }} />}
+    checkedIcon={<DarkModeIcon sx={{ color: "rgb(60, 60, 60)" }} />}
+  />
 ))(({ theme }) => ({
   width: 42,
   height: 26,
@@ -163,7 +173,7 @@ export default function App() {
     );
   const resumeOnClick = () => window.open(Resume);
   const mailOnClick = () => window.open("mailto:asaadbinahmed@gmail.com");
-  
+
   useEffect(() => {
     const root = document.documentElement;
     root.style.backgroundColor = primaryBackgroundColor;
@@ -172,7 +182,7 @@ export default function App() {
 
   return (
     <div
-      style={{ maxHeight: "100vh", display: "flex", flexDirection: "column"}}
+      style={{ maxHeight: "100vh", display: "flex", flexDirection: "column" }}
     >
       <Spotlight className="spotlight" opacity={spotlightOpacity} theme={theme}>
         <p

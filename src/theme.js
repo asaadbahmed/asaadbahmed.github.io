@@ -19,7 +19,7 @@ const themes = {
     spotlightTextColor: "rgb(50, 50, 50)",
     spotlightBackgroundColor: "rgb(240, 240, 240)",
     spotlightBorderColor: "2px solid rgb(200, 200, 200)",
-    spotlightShadowColor: "0 0 10px 2px rgba(120, 120, 120, 0.6)",
+    spotlightShadowColor: "0 0 10px 2px rgba(180, 180, 180, 0.6)",
   },
 };
 
