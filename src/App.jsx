@@ -95,7 +95,7 @@ const IOSSwitch = styled((props) => (
     disableRipple
     {...props}
     icon={<LightModeIcon sx={{ color: "orange" }} />}
-    checkedIcon={<DarkModeIcon sx={{ color: "rgb(60, 60, 60)" }} />}
+    checkedIcon={<DarkModeIcon sx={{ color: "rgb(30, 30, 30)" }} />}
   />
 ))(({ theme }) => ({
   width: 42,
@@ -246,7 +246,8 @@ export default function App() {
         style={{
           display: "flex",
           justifyContent: "flex-start",
-          marginTop: "30vh",
+          paddingTop: "8vh",
+          marginTop: "20vh",
           marginLeft: "15%",
         }}
       >
