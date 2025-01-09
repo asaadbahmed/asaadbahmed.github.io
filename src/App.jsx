@@ -59,9 +59,8 @@ function Spotlight({ children, opacity, theme }) {
     <div
       style={{
         opacity: opacity / 100,
-        transition: "opacity 0.3s ease-out",
         transition:
-          "background-color 0.5s ease-out, border 0.5s ease-out, box-shadow 0.5s ease-out",
+          "opacity 0.3s ease-out, background-color 0.5s ease-out, border 0.5s ease-out, box-shadow 0.5s ease-out",
 
         position: "fixed",
         left: "50%",
