@@ -9,7 +9,9 @@ import {
 
 import { styled } from "@mui/material/styles";
 import Switch from "@mui/material/Switch";
+
 import { useEffect, useState } from "react";
+import themes from "./theme.js";
 import "./App.css";
 
 function FadeInSection({ children, className, ...props }) {
@@ -46,12 +48,16 @@ function Heading() {
   );
 }
 
-function Spotlight({ children, opacity }) {
+function Spotlight({ children, opacity, theme }) {
+  const borderColor = themes[theme]["spotlightBorderColor"];
+  const backgroundColor = themes[theme]["spotlightBackgroundColor"];
+  const shadowColor = themes[theme]["spotlightShadowColor"];
   return (
     <div
       style={{
         opacity: opacity / 100,
         transition: "opacity 0.3s ease-out",
+        transition: "background-color 0.5s ease-out, border 0.5s ease-out, box-shadow 0.5s ease-out",
 
         position: "fixed",
         left: "50%",
@@ -61,9 +67,9 @@ function Spotlight({ children, opacity }) {
         minHeight: "7%",
 
         borderRadius: "2em",
-        border: "2px solid rgb(40, 40, 40)",
-        backgroundColor: "rgb(30, 30, 30)", // IMPORTANT: 20 & 40 look nice too, get opinions
-        boxShadow: "0 0 10px 2px rgba(40, 40, 40, 0.6)",
+        border: borderColor,
+        backgroundColor: backgroundColor,
+        boxShadow: shadowColor,
 
         display: "flex",
         flexDirection: "row",
@@ -143,6 +149,11 @@ export default function App() {
   const [spotlightOpacity, setOpacity] = useState(100);
   const [theme, setTheme] = useState("dark");
 
+  const primaryBackgroundColor = themes[theme]["backgroundColor"];
+  const primaryTextColor = themes[theme]["textColor"];
+
+  const spotlightTextColor = themes[theme]["spotlightTextColor"];
+
   const githubOnClick = () => window.open("https://github.com/asaadbahmed");
   const linkedinOnClick = () =>
     window.open("https://www.linkedin.com/in/asaadbinahmed/");
@@ -152,12 +163,18 @@ export default function App() {
     );
   const resumeOnClick = () => window.open(Resume);
   const mailOnClick = () => window.open("mailto:asaadbinahmed@gmail.com");
+  
+  useEffect(() => {
+    const root = document.documentElement;
+    root.style.backgroundColor = primaryBackgroundColor;
+    root.style.color = primaryTextColor;
+  }, [theme]);
 
   return (
     <div
-      style={{ maxHeight: "100vh", display: "flex", flexDirection: "column" }}
+      style={{ maxHeight: "100vh", display: "flex", flexDirection: "column"}}
     >
-      <Spotlight className="spotlight" opacity={spotlightOpacity}>
+      <Spotlight className="spotlight" opacity={spotlightOpacity} theme={theme}>
         <p
           style={{
             fontSize: "0.8rem",
@@ -165,7 +182,7 @@ export default function App() {
             fontWeight: "bold",
             marginLeft: "4%",
             alignSelf: "center",
-            color: "rgb(150, 150, 150)",
+            color: spotlightTextColor,
           }}
         >
           ASAAD AHMED
@@ -187,26 +204,31 @@ export default function App() {
             className="icon"
             id="github-icon"
             onClick={githubOnClick}
+            style={{ color: spotlightTextColor }}
           ></FaGithub>
           <FaLinkedinIn
             className="icon"
             id="linkedin-icon"
             onClick={linkedinOnClick}
+            style={{ color: spotlightTextColor }}
           ></FaLinkedinIn>
           <FaGraduationCap
             className="icon"
             id="education-icon"
             onClick={educationOnClick}
+            style={{ color: spotlightTextColor }}
           ></FaGraduationCap>
           <FaRegFilePdf
             className="icon"
             id="resume-icon"
             onClick={resumeOnClick}
+            style={{ color: spotlightTextColor }}
           ></FaRegFilePdf>
           <IoMdMail
             className="icon"
             id="mail-icon"
             onClick={mailOnClick}
+            style={{ color: spotlightTextColor }}
           ></IoMdMail>
         </div>
       </Spotlight>
@@ -221,9 +243,12 @@ export default function App() {
         <Heading />
       </FadeInSection>
       <div style={{ position: "fixed", right: "4%", bottom: "4%" }}>
-        <IOSSwitch checked={theme == "dark" ? true : false} onChange={event => {          
-          event.target.checked ? setTheme("dark") : setTheme("light");
-        }} />
+        <IOSSwitch
+          checked={theme == "dark" ? true : false}
+          onChange={(event) => {
+            event.target.checked ? setTheme("dark") : setTheme("light");
+          }}
+        />
       </div>
     </div>
   );

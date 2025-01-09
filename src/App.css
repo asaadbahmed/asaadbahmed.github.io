@@ -1,5 +1,4 @@
 :root {
-  --default-icon-color: rgb(150, 150, 150);
   --github-hover-icon-color: rgb(230, 230, 230);
   --linkedin-hover-icon-color: rgb(0, 119, 181);
   --education-hover-icon-color: rgb(255, 220, 0);
@@ -69,7 +68,6 @@ section {
   pointer-events: auto;
   font-size: 1.3rem;
   margin: auto;
-  color: var(--default-icon-color);
 }
 
 /*
