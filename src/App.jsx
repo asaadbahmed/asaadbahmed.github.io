@@ -1,4 +1,4 @@
-import Resume from "./assets/Asaad_Ahmed_Resume_1-7-25.pdf";
+import Resume from "./assets/Asaad_Ahmed_Resume_1-14-25.pdf";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { IoMdMail } from "react-icons/io";
