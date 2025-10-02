@@ -28,11 +28,11 @@ const Icons = {
     >
       <path
         d="M4.00667 11.7652L19.9999 19.7618L35.9933 11.7651C35.8727 9.66435 34.1309 7.99805 32 7.99805H8C5.86904 7.99805 4.12727 9.66441 4.00667 11.7652Z"
-        fill="#FA003F"
+        fill="#ff6b6b"
       />
       <path
         d="M36 16.2339L19.9999 24.2339L4 16.234V27.998C4 30.2072 5.79086 31.998 8 31.998H32C34.2091 31.998 36 30.2072 36 27.998V16.2339Z"
-        fill="#FA003F"
+        fill="#ff6b6b"
       />
     </svg>
   ),
@@ -41,7 +41,7 @@ const Icons = {
 export function Navigation() {
   return (
     <div className="relative">
-      <Dock iconMagnification={60} iconDistance={100}>
+      <Dock iconMagnification={50} iconDistance={100}>
         <DockIcon className="bg-black/10 dark:bg-white/10">
           <Icons.gitHub className="size-full" />
         </DockIcon>
