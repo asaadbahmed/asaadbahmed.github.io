@@ -42,13 +42,22 @@ export function Navigation() {
   return (
     <div className="relative">
       <Dock iconMagnification={50} iconDistance={100}>
-        <DockIcon className="bg-black/10 dark:bg-white/10">
+        <DockIcon
+          className="bg-black/10 dark:bg-white/10"
+          onClick={() => window.open("https://github.com/asaadbahmed")}
+        >
           <Icons.gitHub className="size-full" />
         </DockIcon>
-        <DockIcon className="bg-black/10 dark:bg-white/10">
+        <DockIcon
+          className="bg-black/10 dark:bg-white/10"
+          onClick={() => window.open("mailto:asaadbinahmed@gmail.com", "_self")}
+        >
           <Icons.email className="size-full" />
         </DockIcon>
-        <DockIcon className="bg-black/10 dark:bg-white/10">
+        <DockIcon
+          className="bg-black/10 dark:bg-white/10"
+          onClick={() => window.open("https://www.linkedin.com/in/asaadbinahmed")}
+        >
           <Icons.linkedIn className="size-full" />
         </DockIcon>
       </Dock>
