@@ -16,9 +16,6 @@ function App() {
           <br />• i run a clothing business
           <br />• and i enjoy learning arabic
         </h3>
-        <h2 className="scroll-m-20 text-center text-2xl font-bold tracking-normal text-balance">
-          Check back later!
-        </h2>
       </div>
     </div>
   );
