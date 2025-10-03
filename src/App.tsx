@@ -1,5 +1,5 @@
 import "./App.css";
-import { Navigation } from "@/components/navigation";
+import { SocialsDock } from "@/components/socials-dock";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           <div>and i enjoy learning arabic</div>
         </div>
       </div>
-      <Navigation />
+      <SocialsDock />
     </div>
   );
 }

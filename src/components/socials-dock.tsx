@@ -41,7 +41,7 @@ const Icons = {
 };
 
 export type IconProps = React.HTMLAttributes<SVGElement>;
-export function Navigation() {
+export function SocialsDock() {
   return (
     <div className="relative">
       <Dock direction="middle">
