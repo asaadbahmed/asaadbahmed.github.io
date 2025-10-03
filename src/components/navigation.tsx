@@ -1,5 +1,7 @@
 import React from "react";
+
 import { Dock, DockIcon } from "@/components/ui/dock";
+import { Button } from "@/components/ui/button";
 
 const Icons = {
   gitHub: (props: IconProps) => (
@@ -38,31 +40,46 @@ const Icons = {
   ),
 };
 
+export type IconProps = React.HTMLAttributes<SVGElement>;
 export function Navigation() {
   return (
     <div className="relative">
-      <Dock iconMagnification={50} iconDistance={100}>
-        <DockIcon
-          className="bg-black/10 dark:bg-white/10"
-          onClick={() => window.open("https://github.com/asaadbahmed")}
-        >
-          <Icons.gitHub className="size-full" />
+      <Dock direction="middle">
+        <DockIcon>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-10 rounded-full"
+            onClick={() => window.open("https://github.com/asaadbahmed")}
+          >
+            <Icons.gitHub className="size-6" />
+          </Button>
         </DockIcon>
-        <DockIcon
-          className="bg-black/10 dark:bg-white/10"
-          onClick={() => window.open("mailto:asaadbinahmed@gmail.com", "_self")}
-        >
-          <Icons.email className="size-full" />
+        <DockIcon>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-10 rounded-full"
+            onClick={() =>
+              window.open("https://www.linkedin.com/in/asaadbinahmed")
+            }
+          >
+            <Icons.linkedIn className="size-6" />
+          </Button>
         </DockIcon>
-        <DockIcon
-          className="bg-black/10 dark:bg-white/10"
-          onClick={() => window.open("https://www.linkedin.com/in/asaadbinahmed")}
-        >
-          <Icons.linkedIn className="size-full" />
+        <DockIcon>
+          <Button
+            variant="ghost"
+            size="icon"
+            className="size-10 rounded-full"
+            onClick={() =>
+              window.open("mailto:asaadbinahmed@gmail.com", "_self")
+            }
+          >
+            <Icons.email className="size-6" />
+          </Button>
         </DockIcon>
       </Dock>
     </div>
   );
 }
-
-export type IconProps = React.HTMLAttributes<SVGElement>;
