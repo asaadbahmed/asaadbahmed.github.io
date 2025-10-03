@@ -5,6 +5,14 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+    inputs:
+        main:
+            description: 'Deploy main branch to GitHub Pages'
+            required: true
+            default: 'main'
+            type: string
+      
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
