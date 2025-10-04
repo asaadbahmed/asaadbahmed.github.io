@@ -2,14 +2,14 @@ import "./App.css";
 import { Separator } from "@/components/ui/separator";
 import { SocialsDock } from "@/components/socials-dock";
 
-const AboutCard = () => (
-  <div className="scroll-m-20 text-sm text-muted-foreground font-medium tracking-normal text-left space-y-2">
-    <div>i'm studying CE at tmu (formerly ry)</div>
-    <div>i build stuff in my freetime</div>
-    <div>i run a clothing business</div>
-    <div>i enjoy learning arabic</div>
-  </div>
-);
+// const AboutCard = () => (
+//   <div className="scroll-m-20 text-sm text-muted-foreground font-medium tracking-normal text-left space-y-2">
+//     <div>i'm studying CE at tmu (formerly ry)</div>
+//     <div>i build stuff in my freetime</div>
+//     <div>i run a clothing business</div>
+//     <div>i enjoy learning arabic</div>
+//   </div>
+// );
 
 const SummaryCard = () => (
   <div className="w-full max-w-sm aspect-square bg-[rgb(247,247,249)] rounded-3xl p-4 flex flex-col gap-4">
