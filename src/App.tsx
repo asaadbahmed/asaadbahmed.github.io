@@ -36,7 +36,7 @@ function App() {
   return (
     <div className="flex flex-col items-center pl-20 pr-20">
       <div className="pb-10">
-        <Tabs />
+        <Navbar />
       </div>
       <div className="flex flex-row flex-1">
         <SummaryCard />
