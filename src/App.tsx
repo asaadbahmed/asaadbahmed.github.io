@@ -1,6 +1,7 @@
 import "./App.css";
 import { Separator } from "@/components/ui/separator";
 import { SocialsDock } from "@/components/socials-dock";
+import { Navbar } from "@/components/navigation-bar";
 
 // const AboutCard = () => (
 //   <div className="scroll-m-20 text-sm text-muted-foreground font-medium tracking-normal text-left space-y-2">
@@ -34,6 +35,9 @@ const SummaryCard = () => (
 function App() {
   return (
     <div className="flex flex-col items-center pl-20 pr-20">
+      <div className="pb-10">
+        <Tabs />
+      </div>
       <div className="flex flex-row flex-1">
         <SummaryCard />
       </div>
