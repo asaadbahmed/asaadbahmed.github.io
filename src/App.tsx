@@ -33,7 +33,7 @@ const SummaryCard = () => (
 function App() {
   return (
     <div>
-      <div className="flex flex-col items-center mb-10">
+      <div className="flex flex-col items-center mb-10 sticky top-10 z-50">
         <Navbar />
       </div>
       <div className="max-w-6xl mx-auto">
