@@ -40,11 +40,11 @@ function App() {
       <div className="pb-10">
         <Navbar />
       </div>
-      <div className="flex flex-col gap-10">
+      <div className="flex flex-col gap-10 mb-20">
         <div className="text-4xl font-semibold">Coming Soon</div>
         <SummaryCard />
       </div>
-      <div className="fixed bottom-0 left-0 right-0 pb-20">
+      <div className="fixed bottom-0 left-0 right-0 pb-10">
         <SocialsDock />
       </div>
     </div>
