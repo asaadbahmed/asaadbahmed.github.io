@@ -14,7 +14,7 @@ const tabs = [
 export function Navbar() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
   const [highlightStyle, setHighlightStyle] = useState({ width: 0, left: 0 });
-  const [contactHovered, setContactHovered] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLSpanElement | null)[]>([]);
 
@@ -39,6 +39,15 @@ export function Navbar() {
   useLayoutEffect(() => {
     requestAnimationFrame(measureHighlight);
   }, [activeTab]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     if (document.fonts) {
@@ -66,20 +75,18 @@ export function Navbar() {
       />
 
       <motion.div
-        onMouseLeave={() => setContactHovered(false)}
-        className="
-           relative z-10 flex flex-row 
+        className={`
+          relative z-10 flex flex-row 
     rounded-full p-2 gap-4
-    bg-white/10 backdrop-blur-sm 
-    border-2 border-[rgb(247,247,249)] 
-    shadow-[inset_0_0_0_1px_rgba(255,255,255,0.2)]
-        "
+    backdrop-blur-sm 
+    border-2 border-[rgb(247,247,249)]
+    ${scrolled ? "bg-white" : "bg-white/10"}
+          `}
       >
         {tabs.map((tab, i) => (
           <button
             key={tab.id}
             onClick={() => setActiveTab(tab.id)}
-            onMouseEnter={() => setContactHovered(tab.label === "Contact")}
             className={`${
               activeTab === tab.id
                 ? "text-black"
@@ -111,42 +118,40 @@ export function Navbar() {
           </button>
         ))}
 
-        {contactHovered && (
-          <AnimatePresence>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ type: "spring", damping: 10 }}
-              className="flex items-center justify-center gap-x-1 h-8"
+        {
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ type: "spring", damping: 10 }}
+            className="flex items-center justify-center gap-x-1 h-8"
+          >
+            <Separator orientation="vertical" className="h-4" />
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full"
+              onClick={() =>
+                window.open("mailto:asaadbinahmed@gmail.com", "_self")
+              }
             >
-              <Separator orientation="vertical" className="h-4" />
-              <Button
-                variant="ghost"
-                className="h-8 w-8 p-0 rounded-full"
-                onClick={() =>
-                  window.open("mailto:asaadbinahmed@gmail.com", "_self")
-                }
-              >
-                <Mail className="w-3 h-3" />
-              </Button>
-              <Button
-                variant="ghost"
-                className="h-8 w-8 p-0 rounded-full"
-                onClick={() => window.open("https://github.com/asaadbahmed")}
-              >
-                <Github className="w-3 h-3" />
-              </Button>
-              <Button
-                variant="ghost"
-                className="h-8 w-8 p-0 rounded-full"
-                onClick={() => window.open("https://linkedin.com/in/...")}
-              >
-                <Linkedin className="w-3 h-3" />
-              </Button>
-            </motion.div>
-          </AnimatePresence>
-        )}
+              <Mail className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full"
+              onClick={() => window.open("https://github.com/asaadbahmed")}
+            >
+              <Github className="w-4 h-4" />
+            </Button>
+            <Button
+              variant="ghost"
+              className="h-8 w-8 p-0 rounded-full"
+              onClick={() => window.open("https://linkedin.com/in/...")}
+            >
+              <Linkedin className="w-4 h-4" />
+            </Button>
+          </motion.div>
+        }
       </motion.div>
     </div>
   );
