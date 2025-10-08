@@ -124,7 +124,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ type: "spring", damping: 10 }}
-            className="flex items-center justify-center gap-x-1 h-8"
+            className="hidden sm:flex items-center justify-center gap-x-1 h-8"
           >
             <Separator orientation="vertical" className="h-4" />
             <Button
