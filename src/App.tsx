@@ -1,4 +1,5 @@
 import "./App.css";
+
 import { Separator } from "@/components/ui/separator";
 import { Navbar } from "@/components/navigation-bar";
 
@@ -39,23 +40,34 @@ function App() {
       <div className="max-w-6xl mx-auto">
         <div className="grid grid-cols-4 grid-rows-2 gap-4">
           {/* hero tile */}
-          <div className="bg-[rgb(247,247,249)] col-span-2 row-span-2 aspect-square rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-2 row-span-2 aspect-square rounded-3xl p-8">
+            <div className="text-left text-4xl font-semibold cursor-default">
+              hi, i'm asaad{" "}
+              <span
+                className="inline-block
+    [transform-origin:70%_70%]
+    hover:animate-[wave-hand_2.3s_linear]"
+              >
+                👋
+              </span>
+            </div>
+          </div>
           {/* current work (anytimeoutfits.com) */}
           <div className="bg-[rgb(247,247,249)] col-span-2 row-span-1 rounded-3xl p-4"></div>
           {/* barcode generator project */}
-          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-1 aspect-square rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-1 aspect-square rounded-3xl p-8"></div>
           {/* email sorter project */}
-          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-1 aspect-square rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-1 aspect-square rounded-3xl p-8"></div>
           {/* inventory manager project */}
-          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-8"></div>
           {/* eebot/robot project */}
-          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-8"></div>
           {/* some random project */}
-          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-8"></div>
           {/* some random project */}
-          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-1 row-span-2 aspect-[9/18] rounded-3xl p-8"></div>
           {/* infinite moving tech stack  */}
-          <div className="bg-[rgb(247,247,249)] col-span-4 row-span-1 aspect-[16/2] rounded-3xl p-4"></div>
+          <div className="bg-[rgb(247,247,249)] col-span-4 row-span-1 aspect-[16/2] rounded-3xl p-8"></div>
         </div>
       </div>
     </div>
