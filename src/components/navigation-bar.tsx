@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useLayoutEffect, useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
@@ -134,21 +134,21 @@ export function Navbar() {
                 window.open("mailto:asaadbinahmed@gmail.com", "_self")
               }
             >
-              <Mail className="w-4 h-4" />
+              <Mail className="w-4 h-4" color="gray" />
             </Button>
             <Button
               variant="ghost"
               className="h-8 w-8 p-0 rounded-full"
               onClick={() => window.open("https://github.com/asaadbahmed")}
             >
-              <Github className="w-4 h-4" />
+              <Github className="w-4 h-4" color="gray" />
             </Button>
             <Button
               variant="ghost"
               className="h-8 w-8 p-0 rounded-full"
               onClick={() => window.open("https://linkedin.com/in/...")}
             >
-              <Linkedin className="w-4 h-4" />
+              <Linkedin className="w-4 h-4" color="gray" />
             </Button>
           </motion.div>
         }
