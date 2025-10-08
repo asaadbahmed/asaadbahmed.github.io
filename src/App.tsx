@@ -1,6 +1,5 @@
 import "./App.css";
 import { Separator } from "@/components/ui/separator";
-import { SocialsDock } from "@/components/socials-dock";
 import { Navbar } from "@/components/navigation-bar";
 
 // const AboutCard = () => (
@@ -27,25 +26,19 @@ const SummaryCard = () => (
       <div>as engineers we should be solutionists.</div>
       <div>and there's always going to be problems,</div>
       <div>but what matters is that we keep solving them.</div>
-      {/* <div>so we should keep our minds open and experiment.</div>
-      <div>with curiosity and care, we can build things that matter.</div>
-      <div>things that make the world a better place.</div> */}
     </div>
   </div>
 );
 
 function App() {
   return (
-    <div className="flex flex-col items-center pl-10 pr-10">
+    <div className="flex flex-col items-center">
       <div className="pb-10">
         <Navbar />
       </div>
       <div className="flex flex-col gap-10 mb-20">
         <div className="text-4xl font-semibold">Coming Soon</div>
         <SummaryCard />
-      </div>
-      <div className="fixed bottom-0 left-0 right-0 pb-10">
-        <SocialsDock />
       </div>
     </div>
   );
