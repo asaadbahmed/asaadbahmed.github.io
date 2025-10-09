@@ -46,7 +46,7 @@ function App() {
                   className="h-full w-full rounded-full"
                 />
 
-                <div className="absolute -bottom-1 -right-1 bg-white rounded-full h-8 w-8 flex justify-center items-center">
+                <div className="cursor-default absolute -bottom-1 -right-1 bg-white rounded-full h-8 w-8 flex justify-center items-center">
                   <span className="inline-block [transform-origin:70%_70%] hover:animate-[wave-hand_2.3s_linear] text-xl">
                     👋
                   </span>
