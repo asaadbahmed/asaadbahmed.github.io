@@ -1,7 +1,7 @@
 import "./App.css";
-
 import { Separator } from "@/components/ui/separator";
 import { Navbar } from "@/components/navigation-bar";
+import pose_2 from "@/assets/memojis/pose_2.png";
 
 // const AboutCard = () => (
 //   <div className="scroll-m-20 text-sm text-muted-foreground font-medium tracking-normal text-left space-y-2">
@@ -35,20 +35,45 @@ function App() {
         rounded-3xl p-8 gap-4
       "
           >
-            <div className="text-left text-3xl md:text-4xl font-semibold cursor-default">
-              hi, i'm asaad{" "}
-              <span className="inline-block [transform-origin:70%_70%] hover:animate-[wave-hand_2.3s_linear]">
-                👋
-              </span>
+            <div className="flex flex-row gap-4 items-center">
+              <div className="relative aspect-square bg-neutral-200 rounded-full h-20 w-20 overflow-visible">
+                <img
+                  src={pose_2}
+                  alt="Memoji"
+                  className="h-full w-full rounded-full"
+                />
+
+                <div className="absolute -bottom-1 -right-1 bg-white rounded-full h-8 w-8 flex justify-center items-center">
+                  <span className="inline-block [transform-origin:70%_70%] hover:animate-[wave-hand_2.3s_linear] text-xl">
+                    👋
+                  </span>
+                </div>
+              </div>
+              <div className="text-left text-3xl md:text-4xl font-semibold cursor-default">
+                hi, i'm asaad
+              </div>
             </div>
             <Separator />
             <div className="text-left text-muted-foreground flex flex-col gap-y-4">
               <div>
-                i'm a 3rd year comp eng student with a passion for building
-                stuff that{" "}
-                <span className="font-semibold">actually matters</span>
+                i have a passion for building stuff that{" "}
+                <span className="font-semibold">actually matters.</span>
               </div>
-              <div>i'm also building a business</div>
+              <div>i also enjoy solving problems.</div>
+              <div>as there's never only one solution.</div>
+              <div>and i believe no problem is unsolvable.</div>
+              <div>we just need to look at it from another perspective.</div>
+              <div>
+                i’m also building a clothing business, check it out{" "}
+                <a
+                  href="https://anytimeoutfits.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary font-medium hover:underline"
+                >
+                  here →
+                </a>
+              </div>
             </div>
           </div>
 
