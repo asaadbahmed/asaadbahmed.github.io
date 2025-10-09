@@ -1,6 +1,7 @@
 import "./App.css";
 import { Separator } from "@/components/ui/separator";
 import { Navbar } from "@/components/navigation-bar";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { ArrowUpRight } from "lucide-react";
 import pose_2 from "@/assets/memojis/pose_2.png";
 
@@ -66,14 +67,12 @@ function App() {
               <div>we just need to look at it from another perspective.</div>
               <div className="flex flex-row flex-wrap items-center gap-1 text-muted-foreground">
                 i’m also building a clothing business,{" "}
-                <a
-                  href="https://anytimeoutfits.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <LinkPreview
+                  url="https://anytimeoutfits.com"
                   className="text-primary font-medium hover:underline flex items-center gap-1"
                 >
                   check it out <ArrowUpRight className="w-4 h-4" />
-                </a>
+                </LinkPreview>
               </div>
             </div>
           </div>
