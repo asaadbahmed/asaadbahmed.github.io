@@ -15,7 +15,7 @@ import { Navbar } from "@/components/navigation-bar";
 function App() {
   return (
     <div>
-      <div className="flex flex-col items-center mb-10 sticky top-10 z-50">
+      <div className="flex flex-col items-center fixed bottom-0 left-0 right-0 lg:sticky lg:top-10 z-50 mb-5 lg:mb-10">
         <Navbar />
       </div>
       <div className="max-w-6xl mx-auto p-4 mb-10">
@@ -42,6 +42,14 @@ function App() {
               </span>
             </div>
             <Separator />
+            <div className="text-left text-muted-foreground flex flex-col gap-y-4">
+              <div>
+                i'm a 3rd year comp eng student with a passion for building
+                stuff that{" "}
+                <span className="font-semibold">actually matters</span>
+              </div>
+              <div>i'm also building a business</div>
+            </div>
           </div>
 
           {/* current work (anytimeoutfits.com) */}
@@ -49,7 +57,7 @@ function App() {
             className="
         bg-[rgb(247,247,249)]
         col-span-1 lg:col-span-2 lg:row-span-1
-        aspect-[4/5] lg:aspect-[16/9]
+        aspect-[4/5] lg:aspect-auto
         rounded-3xl p-4
       "
           ></div>
