@@ -1,6 +1,7 @@
 import "./App.css";
 import { Separator } from "@/components/ui/separator";
 import { Navbar } from "@/components/navigation-bar";
+import { TechStack } from "@/components/tech-stack";
 import { LinkPreview } from "@/components/ui/link-preview";
 import { ArrowUpRight } from "lucide-react";
 import pose_2 from "@/assets/memojis/pose_2.png";
@@ -142,14 +143,18 @@ function App() {
           ></div>
 
           {/* infinite moving tech stack */}
-          <div
+          {/* <div
             className="
         bg-[rgb(247,247,249)]
         col-span-1 lg:col-span-4 lg:row-span-1
         aspect-[4/3] lg:aspect-[16/2]
         rounded-3xl p-8
       "
-          ></div>
+          ></div> */}
+
+          <div className="col-span-1 lg:col-span-4">
+            <TechStack />
+          </div>
         </div>
       </div>
     </div>
