@@ -76,12 +76,12 @@ export function Navbar() {
 
       <motion.div
         className={`
-          relative z-10 flex flex-row 
+    relative z-10 flex flex-row 
     rounded-full p-2 gap-4
-    backdrop-blur-sm 
     border-2 border-[rgb(247,247,249)]
-    ${scrolled ? "bg-white" : "bg-white/10"}
-          `}
+    backdrop-blur-sm
+    ${scrolled ? "bg-white" : "bg-white sm:bg-white/10"}
+  `}
       >
         {tabs.map((tab, i) => (
           <button
