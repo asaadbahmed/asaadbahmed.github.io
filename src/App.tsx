@@ -1,6 +1,7 @@
 import "./App.css";
 import { Separator } from "@/components/ui/separator";
 import { Navbar } from "@/components/navigation-bar";
+import { ArrowUpRight } from "lucide-react";
 import pose_2 from "@/assets/memojis/pose_2.png";
 
 // const AboutCard = () => (
@@ -63,15 +64,15 @@ function App() {
               <div>as there's never only one solution.</div>
               <div>and i believe no problem is unsolvable.</div>
               <div>we just need to look at it from another perspective.</div>
-              <div>
-                i’m also building a clothing business, check it out{" "}
+              <div className="flex flex-row flex-wrap items-center gap-1 text-muted-foreground">
+                i’m also building a clothing business,{" "}
                 <a
                   href="https://anytimeoutfits.com"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-primary font-medium hover:underline"
+                  className="text-primary font-medium hover:underline flex items-center gap-1"
                 >
-                  here →
+                  check it out <ArrowUpRight className="w-4 h-4" />
                 </a>
               </div>
             </div>
