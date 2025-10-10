@@ -92,71 +92,81 @@ function App() {
             </TileContent>
           </Tile>
 
-          {/* barcode generator project */}
-          <div
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-square rounded-3xl p-8",
+              "aspect-[4/5] lg:aspect-square",
               activeTile &&
                 activeTile !== "barcodeGenerator" &&
                 "opacity-[0.05]"
             )}
-          ></div>
+          >
+            <TileContent>
+              <></>
+            </TileContent>
+          </Tile>
 
-          {/* email sorter project */}
-          <div
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-square rounded-3xl p-8",
+              "aspect-[4/5] lg:aspect-square",
               activeTile && activeTile !== "emailSorter" && "opacity-[0.05]"
             )}
-          ></div>
+          >
+            <TileContent>
+              <></>
+            </TileContent>
+          </Tile>
 
-          {/* inventory manager project */}
-          <div
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              "aspect-[4/5] lg:aspect-[9/18]",
               activeTile &&
                 activeTile !== "inventoryManager" &&
                 "opacity-[0.05]"
             )}
-          ></div>
+          >
+            <TileContent>
+              <></>
+            </TileContent>
+          </Tile>
 
-          {/* eebot/robot project */}
-          <div
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              "aspect-[4/5] lg:aspect-[9/18]",
               activeTile && activeTile !== "eeBot" && "opacity-[0.05]"
             )}
-          ></div>
+          >
+            <TileContent>
+              <></>
+            </TileContent>
+          </Tile>
 
-          {/* some random project */}
-          <div
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              "aspect-[4/5] lg:aspect-[9/18]",
               activeTile && activeTile !== "p1" && "opacity-[0.05]"
             )}
-          ></div>
+          >
+            <TileContent>
+              <></>
+            </TileContent>
+          </Tile>
 
-          {/* some random project */}
-          <div
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              "aspect-[4/5] lg:aspect-[9/18]",
               activeTile && activeTile !== "p2" && "opacity-[0.05]"
             )}
-          ></div>
+          >
+            <TileContent>
+              <></>
+            </TileContent>
+          </Tile>
 
-          {/* infinite moving tech stack */}
-          {/* <div
-            className="
-        bg-[rgb(247,247,249)]
-        col-span-1 lg:col-span-4 lg:row-span-1
-        aspect-[4/3] lg:aspect-[16/2]
-        rounded-3xl p-8
-      "
-          ></div> */}
-
-          <div className="col-span-1 lg:col-span-4">
-            <TechStack />
-          </div>
+          <Tile className="col-span-1 lg:col-span-4">
+            <TileContent>
+              <TechStack />
+            </TileContent>
+          </Tile>
         </TileGrid>
       </div>
     </div>
