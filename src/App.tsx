@@ -38,7 +38,7 @@ function App() {
                   </span>
                 </div>
               </div>
-              <div className="text-left text-3xl md:text-4xl font-semibold cursor-default">
+              <div className="text-left text-3xl md:text-4xl font-semibold">
                 hi, i'm asaad
               </div>
             </div>
