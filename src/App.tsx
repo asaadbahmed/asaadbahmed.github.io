@@ -94,7 +94,7 @@ function App() {
           >
             <div
               className={cn(
-                "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 justify-center items-center flex",
+                "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 transition-all ease-linear duration-75 justify-center items-center flex",
                 `${featuredArrowHovered && "scale-105 border-white"}`
               )}
               onMouseEnter={() => setFeaturedArrowHovered(true)}
