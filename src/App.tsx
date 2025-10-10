@@ -8,15 +8,6 @@ import { TechStack } from "@/components/tech-stack";
 import { ArrowUpRight } from "lucide-react";
 import pose_2 from "@/assets/memojis/pose_2.png";
 
-// const AboutCard = () => (
-//   <div className="scroll-m-20 text-sm text-muted-foreground font-medium tracking-normal text-left space-y-2">
-//     <div>i'm studying CE at tmu (formerly ry)</div>
-//     <div>i build stuff in my freetime</div>
-//     <div>i run a clothing business</div>
-//     <div>i enjoy learning arabic</div>
-//   </div>
-// );
-
 function App() {
   const [activeTile, setActiveTile] = useState<string | null>(null);
   return (
