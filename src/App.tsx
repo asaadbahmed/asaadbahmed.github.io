@@ -1,8 +1,10 @@
 import "./App.css";
+import { useState } from "react";
+import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
+import { LinkPreview } from "@/components/ui/link-preview";
 import { Navbar } from "@/components/navigation-bar";
 import { TechStack } from "@/components/tech-stack";
-import { LinkPreview } from "@/components/ui/link-preview";
 import { ArrowUpRight } from "lucide-react";
 import pose_2 from "@/assets/memojis/pose_2.png";
 
@@ -16,6 +18,8 @@ import pose_2 from "@/assets/memojis/pose_2.png";
 // );
 
 function App() {
+  const [featuredArrowHovered, setFeaturedArrowHovered] = useState(false);
+
   return (
     <div>
       <div className="flex flex-col items-center fixed bottom-0 left-0 right-0 lg:sticky lg:top-10 z-50 mb-5 lg:mb-10">
@@ -39,7 +43,7 @@ function App() {
       "
           >
             <div className="flex flex-row gap-4 items-center">
-              <div className="relative aspect-square bg-neutral-200 rounded-full h-20 w-20 overflow-visible">
+              <div className="relative aspect-square bg-neutral-200 border-4 border-white rounded-full h-20 w-20 overflow-visible">
                 <img
                   src={pose_2}
                   alt="Memoji"
@@ -85,8 +89,30 @@ function App() {
         col-span-1 lg:col-span-2 lg:row-span-1
         aspect-[4/5] lg:aspect-auto
         rounded-3xl p-4
+        flex flex-col
       "
-          ></div>
+          >
+            <div
+              className={cn(
+                "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 justify-center items-center flex",
+                `${featuredArrowHovered && "scale-105 border-white"}`
+              )}
+              onMouseEnter={() => setFeaturedArrowHovered(true)}
+              onMouseLeave={() => setFeaturedArrowHovered(false)}
+            >
+              <ArrowUpRight
+                className={cn(
+                  "w-4 h-4",
+                  `${
+                    featuredArrowHovered
+                      ? "text-black"
+                      : "text-muted-foreground"
+                  } `
+                )}
+                strokeWidth={2.5}
+              />
+            </div>
+          </div>
 
           {/* barcode generator project */}
           <div
