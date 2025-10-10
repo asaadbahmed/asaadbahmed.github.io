@@ -38,7 +38,7 @@ function App() {
                   </span>
                 </div>
               </div>
-              <div>hi, i'm asaad</div>
+              <div className="text-left">hi, i'm asaad</div>
             </TileTitle>
 
             <Separator />
@@ -63,33 +63,34 @@ function App() {
             </TileContent>
           </Tile>
 
-          {/* current work (anytimeoutfits.com) */}
-          <div
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] col-span-1 lg:col-span-2 lg:row-span-1 aspect-[4/5] lg:aspect-auto rounded-3xl p-4 flex flex-col",
+              "flex flex-col col-span-1 lg:col-span-2 lg:row-span-1 aspect-[4/5] lg:aspect-auto",
               activeTile && activeTile !== "currentWork" && "opacity-[0.05]"
             )}
           >
-            <div
-              className={cn(
-                "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 transition-all ease-linear duration-75 hover:scale-105 hover:border-white justify-center items-center flex"
-              )}
-              onMouseEnter={() => setActiveTile("currentWork")}
-              onMouseLeave={() => setActiveTile(null)}
-            >
-              <ArrowUpRight
+            <TileContent className="flex flex-1">
+              <div
                 className={cn(
-                  "w-4 h-4",
-                  `${
-                    activeTile === "currentWork"
-                      ? "text-black"
-                      : "text-muted-foreground"
-                  } `
+                  "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 transition-all ease-linear duration-75 hover:scale-105 hover:border-white justify-center items-center flex"
                 )}
-                strokeWidth={2.5}
-              />
-            </div>
-          </div>
+                onMouseEnter={() => setActiveTile("currentWork")}
+                onMouseLeave={() => setActiveTile(null)}
+              >
+                <ArrowUpRight
+                  className={cn(
+                    "w-4 h-4",
+                    `${
+                      activeTile === "currentWork"
+                        ? "text-black"
+                        : "text-muted-foreground"
+                    } `
+                  )}
+                  strokeWidth={2.5}
+                />
+              </div>
+            </TileContent>
+          </Tile>
 
           {/* barcode generator project */}
           <div
