@@ -18,29 +18,20 @@ import pose_2 from "@/assets/memojis/pose_2.png";
 // );
 
 function App() {
-  const [featuredArrowHovered, setFeaturedArrowHovered] = useState(false);
-
+  const [activeTile, setActiveTile] = useState<String | null>(null);
   return (
     <div>
       <div className="flex flex-col items-center fixed bottom-0 left-0 right-0 lg:sticky lg:top-10 z-50 mb-5 lg:mb-10">
         <Navbar />
       </div>
       <div className="max-w-6xl mx-auto p-4 mb-10">
-        <div
-          className="
-      grid gap-4
-      grid-cols-1
-      lg:grid-cols-4 lg:grid-rows-2
-    "
-        >
+        <div className="grid gap-4 grid-cols-1 lg:grid-cols-4 lg:grid-rows-2">
           {/* hero tile */}
           <div
-            className="
-        flex flex-col bg-[rgb(247,247,249)]
-        col-span-1 lg:col-span-2 lg:row-span-2
-        aspect-[4/5] lg:aspect-square
-        rounded-3xl p-8 gap-4
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear flex flex-col bg-[rgb(247,247,249)] col-span-1 lg:col-span-2 lg:row-span-2 aspect-[4/5] lg:aspect-square rounded-3xl p-8 gap-4",
+              activeTile && activeTile !== "hero" && "opacity-[0.05]"
+            )}
           >
             <div className="flex flex-row gap-4 items-center">
               <div className="relative aspect-square bg-neutral-200 border-4 border-white rounded-full h-20 w-20 overflow-visible">
@@ -84,27 +75,23 @@ function App() {
 
           {/* current work (anytimeoutfits.com) */}
           <div
-            className="
-        bg-[rgb(247,247,249)]
-        col-span-1 lg:col-span-2 lg:row-span-1
-        aspect-[4/5] lg:aspect-auto
-        rounded-3xl p-4
-        flex flex-col
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] col-span-1 lg:col-span-2 lg:row-span-1 aspect-[4/5] lg:aspect-auto rounded-3xl p-4 flex flex-col",
+              activeTile && activeTile !== "currentWork" && "opacity-[0.05]"
+            )}
           >
             <div
               className={cn(
-                "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 transition-all ease-linear duration-75 justify-center items-center flex",
-                `${featuredArrowHovered && "scale-105 border-white"}`
+                "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 transition-all ease-linear duration-75 hover:scale-105 hover:border-white justify-center items-center flex"
               )}
-              onMouseEnter={() => setFeaturedArrowHovered(true)}
-              onMouseLeave={() => setFeaturedArrowHovered(false)}
+              onMouseEnter={() => setActiveTile("currentWork")}
+              onMouseLeave={() => setActiveTile(null)}
             >
               <ArrowUpRight
                 className={cn(
                   "w-4 h-4",
                   `${
-                    featuredArrowHovered
+                    activeTile === "currentWork"
                       ? "text-black"
                       : "text-muted-foreground"
                   } `
@@ -116,56 +103,54 @@ function App() {
 
           {/* barcode generator project */}
           <div
-            className="
-        bg-[rgb(247,247,249)]
-        aspect-[4/5] lg:aspect-square
-        rounded-3xl p-8
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-square rounded-3xl p-8",
+              activeTile &&
+                activeTile !== "barcodeGenerator" &&
+                "opacity-[0.05]"
+            )}
           ></div>
 
           {/* email sorter project */}
           <div
-            className="
-        bg-[rgb(247,247,249)]
-        aspect-[4/5] lg:aspect-square
-        rounded-3xl p-8
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-square rounded-3xl p-8",
+              activeTile && activeTile !== "emailSorter" && "opacity-[0.05]"
+            )}
           ></div>
 
           {/* inventory manager project */}
           <div
-            className="
-        bg-[rgb(247,247,249)]
-        aspect-[4/5] lg:aspect-[9/18]
-        rounded-3xl p-8
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              activeTile &&
+                activeTile !== "inventoryManager" &&
+                "opacity-[0.05]"
+            )}
           ></div>
 
           {/* eebot/robot project */}
           <div
-            className="
-        bg-[rgb(247,247,249)]
-        aspect-[4/5] lg:aspect-[9/18]
-        rounded-3xl p-8
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              activeTile && activeTile !== "eeBot" && "opacity-[0.05]"
+            )}
           ></div>
 
           {/* some random project */}
           <div
-            className="
-        bg-[rgb(247,247,249)]
-        aspect-[4/5] lg:aspect-[9/18]
-        rounded-3xl p-8
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              activeTile && activeTile !== "p1" && "opacity-[0.05]"
+            )}
           ></div>
 
           {/* some random project */}
           <div
-            className="
-        bg-[rgb(247,247,249)]
-        aspect-[4/5] lg:aspect-[9/18]
-        rounded-3xl p-8
-      "
+            className={cn(
+              "transition-all duration-100 ease-linear bg-[rgb(247,247,249)] aspect-[4/5] lg:aspect-[9/18] rounded-3xl p-8",
+              activeTile && activeTile !== "p2" && "opacity-[0.05]"
+            )}
           ></div>
 
           {/* infinite moving tech stack */}
