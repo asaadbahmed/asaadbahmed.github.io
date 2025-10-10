@@ -18,7 +18,7 @@ import pose_2 from "@/assets/memojis/pose_2.png";
 // );
 
 function App() {
-  const [activeTile, setActiveTile] = useState<String | null>(null);
+  const [activeTile, setActiveTile] = useState<string | null>(null);
   return (
     <div>
       <div className="flex flex-col items-center fixed bottom-0 left-0 right-0 lg:sticky lg:top-10 z-50 mb-5 lg:mb-10">
