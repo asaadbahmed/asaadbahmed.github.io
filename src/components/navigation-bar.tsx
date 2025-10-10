@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useLayoutEffect, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Github, Linkedin, Mail } from "lucide-react";
@@ -13,32 +13,10 @@ const tabs = [
 
 export function Navbar() {
   const [activeTab, setActiveTab] = useState(tabs[0].id);
-  const [highlightStyle, setHighlightStyle] = useState({ width: 0, left: 0 });
+
   const [scrolled, setScrolled] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLSpanElement | null)[]>([]);
-
-  const measureHighlight = () => {
-    const idx = tabs.findIndex((t) => t.id === activeTab);
-    const el = tabRefs.current[idx];
-    const containerRect = containerRef.current?.getBoundingClientRect();
-    const textRect = el?.getBoundingClientRect();
-
-    if (containerRect && textRect) {
-      setHighlightStyle({
-        width: textRect.width,
-        left: textRect.left - containerRect.left,
-      });
-    }
-  };
-
-  useLayoutEffect(() => {
-    measureHighlight();
-  }, [activeTab]);
-
-  useLayoutEffect(() => {
-    requestAnimationFrame(measureHighlight);
-  }, [activeTab]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,31 +27,8 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  useEffect(() => {
-    if (document.fonts) {
-      document.fonts.ready.then(measureHighlight);
-    }
-  }, [activeTab]);
-
   return (
     <div className="relative w-fit" ref={containerRef}>
-      <motion.div
-        layout="position"
-        transition={{ type: "spring", bounce: 0.25, duration: 0.6 }}
-        style={{
-          width: highlightStyle.width,
-          left: highlightStyle.left,
-        }}
-        className="
-          absolute 
-          -top-1.5
-          h-2
-          bg-black 
-          rounded-t-sm
-          z-0
-        "
-      />
-
       <motion.div
         className={`
     relative z-10 flex flex-row 
@@ -107,14 +62,19 @@ export function Navbar() {
               />
             )}
 
-            <span
-              ref={(el: HTMLSpanElement | null) => {
-                tabRefs.current[i] = el;
-              }}
-              className="relative z-10"
-            >
-              {tab.label}
-            </span>
+            <motion.div className="flex flex-row justify-center items-center gap-2">
+              <span
+                ref={(el: HTMLSpanElement | null) => {
+                  tabRefs.current[i] = el;
+                }}
+                className="relative z-10"
+              >
+                {tab.label}
+              </span>
+              {activeTab === tab.id && (
+                <div className="h-1 w-1 rounded-full bg-rose-500 z-50" />
+              )}
+            </motion.div>
           </button>
         ))}
 
