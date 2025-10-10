@@ -161,13 +161,11 @@ function App() {
               <></>
             </TileContent>
           </Tile>
-
-          <Tile className="col-span-1 lg:col-span-4">
-            <TileContent>
-              <TechStack />
-            </TileContent>
-          </Tile>
         </TileGrid>
+
+        <div className="mt-2">
+          <TechStack />
+        </div>
       </div>
     </div>
   );
