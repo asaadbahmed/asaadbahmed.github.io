@@ -3,6 +3,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
 import { LinkPreview } from "@/components/ui/link-preview";
+import { Tile, TileContent, TileGrid, TileTitle } from "@/components/tile";
 import { Navbar } from "@/components/navigation-bar";
 import { TechStack } from "@/components/tech-stack";
 import { ArrowUpRight } from "lucide-react";
@@ -16,15 +17,14 @@ function App() {
         <Navbar />
       </div>
       <div className="max-w-6xl mx-auto p-4 mb-10">
-        <div className="grid gap-4 grid-cols-1 lg:grid-cols-4 lg:grid-rows-2">
-          {/* hero tile */}
-          <div
+        <TileGrid>
+          <Tile
             className={cn(
-              "transition-all duration-100 ease-linear flex flex-col bg-[rgb(247,247,249)] col-span-1 lg:col-span-2 lg:row-span-2 aspect-[4/5] lg:aspect-square rounded-3xl p-8 gap-4",
+              "flex-col col-span-1 lg:col-span-2 lg:row-span-2 aspect-[4/5] lg:aspect-square",
               activeTile && activeTile !== "hero" && "opacity-[0.05]"
             )}
           >
-            <div className="flex flex-row gap-4 items-center">
+            <TileTitle className="flex flex-row gap-4 items-center">
               <div className="relative aspect-square bg-neutral-200 border-4 border-white rounded-full h-20 w-20 overflow-visible">
                 <img
                   src={pose_2}
@@ -38,12 +38,11 @@ function App() {
                   </span>
                 </div>
               </div>
-              <div className="text-left text-3xl md:text-4xl font-semibold">
-                hi, i'm asaad
-              </div>
-            </div>
+              <div>hi, i'm asaad</div>
+            </TileTitle>
+
             <Separator />
-            <div className="text-left text-muted-foreground flex flex-col gap-y-4">
+            <TileContent className="text-left text-muted-foreground flex flex-col gap-y-4">
               <div>
                 i have a passion for building stuff that{" "}
                 <span className="font-semibold">actually matters.</span>
@@ -61,8 +60,8 @@ function App() {
                   check it out <ArrowUpRight className="w-4 h-4" />
                 </LinkPreview>
               </div>
-            </div>
-          </div>
+            </TileContent>
+          </Tile>
 
           {/* current work (anytimeoutfits.com) */}
           <div
@@ -157,7 +156,7 @@ function App() {
           <div className="col-span-1 lg:col-span-4">
             <TechStack />
           </div>
-        </div>
+        </TileGrid>
       </div>
     </div>
   );
