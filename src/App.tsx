@@ -13,27 +13,27 @@ function App() {
   const [activeTile, setActiveTile] = useState<string | null>(null);
   return (
     <div>
-      <div className="flex flex-col items-center fixed bottom-0 left-0 right-0 lg:sticky lg:top-10 z-50 mb-5 lg:mb-10">
+      <div className="fixed right-0 bottom-0 left-0 z-50 mb-5 flex flex-col items-center lg:sticky lg:top-10 lg:mb-10">
         <Navbar />
       </div>
-      <div className="max-w-6xl mx-auto p-4 mb-10">
+      <div className="mx-auto mb-10 max-w-6xl p-4">
         <TileGrid>
           <Tile
             className={cn(
-              "flex-col col-span-1 lg:col-span-2 lg:row-span-2 aspect-[4/5] lg:aspect-square",
-              activeTile && activeTile !== "hero" && "opacity-[0.05]"
+              "col-span-1 aspect-[4/5] flex-col lg:col-span-2 lg:row-span-2 lg:aspect-square",
+              activeTile && activeTile !== "hero" && "opacity-[0.05]",
             )}
           >
-            <TileTitle className="flex flex-row gap-4 items-center">
-              <div className="relative aspect-square bg-neutral-200 border-4 border-white rounded-full h-20 w-20 overflow-visible">
+            <TileTitle className="flex flex-row items-center gap-4">
+              <div className="relative aspect-square h-20 w-20 overflow-visible rounded-full border-4 border-white bg-neutral-200">
                 <img
                   src={pose_2}
                   alt="Memoji"
                   className="h-full w-full rounded-full"
                 />
 
-                <div className="cursor-default absolute -bottom-1 -right-1 bg-white rounded-full h-8 w-8 flex justify-center items-center">
-                  <span className="inline-block [transform-origin:70%_70%] hover:animate-[wave-hand_2.3s_linear] text-xl">
+                <div className="absolute -right-1 -bottom-1 flex h-8 w-8 cursor-default items-center justify-center rounded-full bg-white">
+                  <span className="inline-block [transform-origin:70%_70%] text-xl hover:animate-[wave-hand_2.3s_linear]">
                     👋
                   </span>
                 </div>
@@ -42,7 +42,7 @@ function App() {
             </TileTitle>
 
             <Separator />
-            <TileContent className="text-left text-muted-foreground flex flex-col gap-y-4">
+            <TileContent className="text-muted-foreground flex flex-col gap-y-4 text-left">
               <div>
                 i have a passion for building stuff that{" "}
                 <span className="font-semibold">actually matters.</span>
@@ -51,13 +51,13 @@ function App() {
               <div>as there's never only one solution.</div>
               <div>and i believe no problem is unsolvable.</div>
               <div>we just need to look at it from another perspective.</div>
-              <div className="flex flex-row flex-wrap items-center gap-1 text-muted-foreground">
+              <div className="text-muted-foreground flex flex-row flex-wrap items-center gap-1">
                 i’m also building a clothing business,{" "}
                 <LinkPreview
                   url="https://anytimeoutfits.com"
-                  className="text-primary font-medium hover:underline flex items-center gap-1"
+                  className="text-primary flex items-center gap-1 font-medium hover:underline"
                 >
-                  check it out <ArrowUpRight className="w-4 h-4" />
+                  check it out <ArrowUpRight className="h-4 w-4" />
                 </LinkPreview>
               </div>
             </TileContent>
@@ -65,26 +65,26 @@ function App() {
 
           <Tile
             className={cn(
-              "flex flex-col col-span-1 lg:col-span-2 lg:row-span-1 aspect-[4/5] lg:aspect-auto",
-              activeTile && activeTile !== "currentWork" && "opacity-[0.05]"
+              "col-span-1 flex aspect-[4/5] flex-col lg:col-span-2 lg:row-span-1 lg:aspect-auto",
+              activeTile && activeTile !== "currentWork" && "opacity-[0.05]",
             )}
           >
             <TileContent className="flex flex-1">
               <div
                 className={cn(
-                  "rounded-full mt-auto h-8 w-8 bg-transparent border-2 border-neutral-300 transition-all ease-linear duration-75 hover:scale-105 hover:border-white justify-center items-center flex"
+                  "mt-auto flex h-8 w-8 items-center justify-center rounded-full border-2 border-neutral-300 bg-transparent transition-all duration-75 ease-linear hover:scale-105 hover:border-white",
                 )}
                 onMouseEnter={() => setActiveTile("currentWork")}
                 onMouseLeave={() => setActiveTile(null)}
               >
                 <ArrowUpRight
                   className={cn(
-                    "w-4 h-4",
+                    "h-4 w-4",
                     `${
                       activeTile === "currentWork"
                         ? "text-black"
                         : "text-muted-foreground"
-                    } `
+                    } `,
                   )}
                   strokeWidth={2.5}
                 />
@@ -97,7 +97,7 @@ function App() {
               "aspect-[4/5] lg:aspect-square",
               activeTile &&
                 activeTile !== "barcodeGenerator" &&
-                "opacity-[0.05]"
+                "opacity-[0.05]",
             )}
           >
             <TileContent>
@@ -108,7 +108,7 @@ function App() {
           <Tile
             className={cn(
               "aspect-[4/5] lg:aspect-square",
-              activeTile && activeTile !== "emailSorter" && "opacity-[0.05]"
+              activeTile && activeTile !== "emailSorter" && "opacity-[0.05]",
             )}
           >
             <TileContent>
@@ -121,7 +121,7 @@ function App() {
               "aspect-[4/5] lg:aspect-[9/18]",
               activeTile &&
                 activeTile !== "inventoryManager" &&
-                "opacity-[0.05]"
+                "opacity-[0.05]",
             )}
           >
             <TileContent>
@@ -132,7 +132,7 @@ function App() {
           <Tile
             className={cn(
               "aspect-[4/5] lg:aspect-[9/18]",
-              activeTile && activeTile !== "eeBot" && "opacity-[0.05]"
+              activeTile && activeTile !== "eeBot" && "opacity-[0.05]",
             )}
           >
             <TileContent>
@@ -143,7 +143,7 @@ function App() {
           <Tile
             className={cn(
               "aspect-[4/5] lg:aspect-[9/18]",
-              activeTile && activeTile !== "p1" && "opacity-[0.05]"
+              activeTile && activeTile !== "p1" && "opacity-[0.05]",
             )}
           >
             <TileContent>
@@ -154,7 +154,7 @@ function App() {
           <Tile
             className={cn(
               "aspect-[4/5] lg:aspect-[9/18]",
-              activeTile && activeTile !== "p2" && "opacity-[0.05]"
+              activeTile && activeTile !== "p2" && "opacity-[0.05]",
             )}
           >
             <TileContent>
